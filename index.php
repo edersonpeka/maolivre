@@ -51,11 +51,18 @@
         background-color: #CCD;
         overflow: hidden;
     }
+    body {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: fixed;
+    }
     .stage {
         display: grid;
         grid-gap: 3px;
         grid-template-rows: 1fr auto;
-        height: 97.5vh;
+        height: calc( 100% - 1vh );
         padding: .5%;
         margin-bottom: 1vh;
     }
@@ -227,11 +234,7 @@ function myCanvas( obj ) {
         return this;
     }
     this.calcSize();
-    window.addEventListener( 'resize', this.calcSize );
-    this.pixelPos = [
-        Math.floor( Math.random() * this.canvas.width ),
-        Math.floor( Math.random() * this.canvas.height )
-    ];
+    //window.addEventListener( 'resize', this.calcSize );
     this.clear = function( callback ) {
         window.requestAnimationFrame( () => {
             this.ctx.save();

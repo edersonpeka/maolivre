@@ -12,7 +12,7 @@ header( 'Content-Type: application/javascript' );
 
 ?>
 
-var CACHE_NAME = 'maolivre-cache-0.0.1';
+var CACHE_NAME = 'maolivre-cache-<?php echo filemtime( 'index.php' ); ?>';
 var urlsToCache = [
   '/'
 ];
