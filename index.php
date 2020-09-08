@@ -236,12 +236,14 @@ function myCanvas( obj ) {
     }
 
     this.calcSize = function () {
+        let _img_data = this.ctx.getImageData( 0, 0, this.canvas.width, this.canvas.height );
         this.canvas.width = this.canvas.scrollWidth;
         this.canvas.height = this.canvas.scrollHeight;
+        this.ctx.putImageData( _img_data, 0, 0 );
         return this;
     }
     this.calcSize();
-    //window.addEventListener( 'resize', this.calcSize );
+    window.addEventListener( 'resize', this.calcSize );
     this.clear = function( callback ) {
         window.requestAnimationFrame( () => {
             this.ctx.save();
