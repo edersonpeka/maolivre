@@ -145,7 +145,7 @@
 <script>
 function myCanvas( obj ) {
     this.color = '#000000';
-    this.lineWidth = 2;
+    this.lineWidth = 'lineWidth' in localStorage ? parseInt( localStorage.lineWidth ) : 2;
     this.canvas = obj;
     this.ctx = this.canvas.getContext('2d');
     this.ctx.lineCap = 'round';
@@ -159,10 +159,17 @@ function myCanvas( obj ) {
     this.controls.limpar.addEventListener( 'click', () => {
         this.clear();
     } );
+    this.setLineWidth = function ( _w ) {
+        if ( _w > 42 ) _w = 2;
+        _w = Math.max( _w, 2 );
+        this.lineWidth = _w;
+        this.controls.tamanho.style.fontSize = ( 80 + ( _w * 2 ) ) + '%';
+        localStorage.lineWidth = _w;
+        return this;
+    }
+    this.setLineWidth( this.lineWidth );
     this.controls.tamanho.addEventListener( 'click', () => {
-        this.lineWidth += 8;
-        if ( this.lineWidth > 42 ) this.lineWidth = 2;
-        this.controls.tamanho.style.fontSize = ( 80 + ( this.lineWidth * 2 ) ) + '%';
+        this.setLineWidth( this.lineWidth + 8 );
     } );
     this.controls.cores.forEach( _cor => {
         _cor.addEventListener( 'click', _ev => {
