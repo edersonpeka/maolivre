@@ -216,7 +216,7 @@ function myCanvas( obj ) {
           clientY: touch.clientY
         } );
         this.canvas.dispatchEvent( mouseEvent );
-    } );
+    }, { passive: true } );
     this.canvas.addEventListener( 'touchmove', (e) => {
         var touch = e.touches[0];
         var mouseEvent = new MouseEvent( 'mousemove', {
@@ -224,7 +224,7 @@ function myCanvas( obj ) {
           clientY: touch.clientY
         } );
         this.canvas.dispatchEvent( mouseEvent );
-    } );
+    }, { passive: true } );
     this.canvas.addEventListener( 'touchend', (e) => {
         var mouseEvent = new MouseEvent( 'mouseup', {});
         this.canvas.dispatchEvent( mouseEvent );
