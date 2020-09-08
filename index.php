@@ -66,7 +66,7 @@
         padding: .5%;
         margin-bottom: 1vh;
     }
-    .canvas-container canvas {
+   .canvas-container canvas {
         width: 100%;
         height: 100%;
         border: 3px inset #99B;
@@ -80,6 +80,14 @@
     .controls .buttons {
         display: grid;
         grid-template-columns: repeat( 6, 1fr );
+    }
+    @media (orientation: landscape) {
+        .stage {
+            grid-template-columns: 1fr auto;
+        }
+        .controls .buttons {
+            grid-template-columns: 1fr 1fr;
+        }
     }
     .controls button {
         margin: 2px;
