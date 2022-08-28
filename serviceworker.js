@@ -1,18 +1,4 @@
-<?php
-if ( 'OPTIONS' == strtoupper( $_SERVER['REQUEST_METHOD'] ) ) :
-  header( 'Content-Length: 0' );
-  header( 'Content-Type: text/plain' );
-  die();
-endif;
-
-header( 'Pragma: no-cache' );
-header( 'Cache-Control: private, no-cache, no-store, max-age=0, must-revalidate, proxy-revalidate' );
-header( 'Cache-Control: post-check=0, pre-check=0', false );
-header( 'Content-Type: application/javascript' );
-
-?>
-
-var CACHE_NAME = 'maolivre-cache-<?php echo filemtime( 'index.php' ); ?>';
+var CACHE_NAME = 'maolivre-cache-20220828123142';
 var urlsToCache = [
   '/'
 ];

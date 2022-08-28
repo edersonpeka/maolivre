@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Mão Livre - Aplicativo de Desenho Simples</title>
     <meta content="Aplicativo de desenho simples, pequeno, leve, sem propagandas, sem funcionalidades (não salve, não importe, não exporte, não compartilhe, só rabisque)." name="description" />
-    <link rel="canonical" href="https://ederson.peka.nom.br/maolivre/" />
+    <link rel="canonical" href="https://maolivre.ferreira.tec.br/" />
     <meta property="og:title" content="Mão Livre - Aplicativo de Desenho Simples" />
     <meta property="og:description" content="Aplicativo de desenho simples, pequeno, leve, sem propagandas, sem funcionalidades (não salve, não importe, não exporte, não compartilhe, só rabisque)." />
-    <meta property="og:image" content="https://ederson.peka.nom.br/maolivre/share.jpg" />
-    <meta property="og:url" content="https://ederson.peka.nom.br/maolivre/" />
+    <meta property="og:image" content="https://maolivre.ferreira.tec.br/share.jpg" />
+    <meta property="og:url" content="https://maolivre.ferreira.tec.br/" />
     <meta property="og:site_name" content="Mão Livre" />
     <meta property="og:locale" content="pt_BR" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -18,7 +18,7 @@
     <meta name="twitter:creator" content="@peka" />
     <meta name="twitter:title" content="Mão Livre - Aplicativo de Desenho Simples" />
     <meta name="twitter:description" content="Aplicativo de desenho simples, pequeno, leve, sem propagandas, sem funcionalidades (não salve, não importe, não exporte, não compartilhe, só rabisque)." />
-    <meta name="twitter:image" content="https://ederson.peka.nom.br/maolivre/share.jpg" />
+    <meta name="twitter:image" content="https://maolivre.ferreira.tec.br/share.jpg" />
     <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png" />
@@ -290,7 +290,7 @@ window.addEventListener( 'load', () => {
 
     if ( 'serviceWorker' in navigator ) {
         let _base = document.location.href.split('/').slice(0,-1);
-        let _swurl = _base.join( '/' ) + '/serviceworker.js.php';
+        let _swurl = _base.join( '/' ) + '/serviceworker.js';
         navigator.serviceWorker.getRegistrations().then( registrations => {
             let _registered = false;
             for ( let registration of registrations ) {
